@@ -10,4 +10,9 @@ public class HomeController {
     public String home() {
         return "index";
     }
+
+    @GetMapping("/video")
+    public String video() {
+        return "index-video";
+    }   
 }
