@@ -8,6 +8,51 @@
   <!-- Bootstrap via WebJars -->
   <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}">
   
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Estilos customizados para o carrossel -->
+  <style>
+    #valoresCarousel {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .carousel-item {
+      padding: 2rem 0;
+      min-height: 400px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+      color: #0d6efd;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #0d6efd;
+      border-radius: 50%;
+      padding: 20px;
+    }
+    
+    .carousel-indicators button {
+      background-color: #0d6efd;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    
+    .card {
+      transition: transform 0.3s ease-in-out;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+  
   <!-- Seu CSS customizado (opcional) -->
   <!-- <link rel="stylesheet" th:href="@{/css/styles.css}"> -->
 </head>
@@ -33,28 +78,155 @@
     <section id="home" class="p-5 bg-light">
       <div class="container">
         <h1>Quem Somos</h1>
-        <p>Conteúdo sobre a Feteps...</p>
+        <p>logística</p>
       </div>
     </section>
     
     <section id="missao" class="p-5">
       <div class="container">
         <h1>Missão</h1>
-        <p>Nossa missão...</p>
+        <p> Desenvolver soluções inteligentes de monitoramento de temperatura que garantam qualidade, segurança e eficiência toda a cadeia logística, promovendo inovação e confiabilidade para nossos clientes e para a sociedade.</p>
       </div>
     </section>
     
     <section id="visao" class="p-5 bg-light">
       <div class="container">
         <h1>Visão</h1>
-        <p>Nossa visão...</p>
+        <p>Ser referência nacional em soluções inteligentes de monitoramento de temperatura, impulsionando e contribuindo para um futuro mais seguro, eficiente e sustentável</p>
       </div>
     </section>
     
     <section id="valores" class="p-5">
       <div class="container">
-        <h1>Valores</h1>
-        <p>Nossos valores...</p>
+        <h1 class="text-center mb-5">Nossos Valores</h1>
+        
+        <!-- Carrossel de Valores -->
+        <div id="valoresCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#valoresCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#valoresCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#valoresCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#valoresCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#valoresCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#valoresCarousel" data-bs-slide-to="5"></button>
+          </div>
+
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <!-- Slide 1: Inovação -->
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5">
+                      <div class="mb-4">
+                        <i class="bi bi-lightbulb-fill text-warning" style="font-size: 4rem;"></i>
+                      </div>
+                      <h3 class="card-title text-primary mb-3">Inovação</h3>
+                      <p class="card-text lead">Buscamos constantemente novas tecnologias para transformar a gestão da cadeia de frio, mantendo-nos na vanguarda das soluções inteligentes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Confiabilidade -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5">
+                      <div class="mb-4">
+                        <i class="bi bi-shield-check-fill text-success" style="font-size: 4rem;"></i>
+                      </div>
+                      <h3 class="card-title text-primary mb-3">Confiabilidade</h3>
+                      <p class="card-text lead">Entregamos dados precisos e seguros, essenciais para decisões estratégicas que impactam diretamente o sucesso dos nossos clientes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Sustentabilidade -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5">
+                      <div class="mb-4">
+                        <i class="bi bi-leaf-fill text-success" style="font-size: 4rem;"></i>
+                      </div>
+                      <h3 class="card-title text-primary mb-3">Sustentabilidade</h3>
+                      <p class="card-text lead">Atuamos para reduzir desperdício e impactos ambientais na logística, contribuindo para um futuro mais sustentável.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Eficiência -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5">
+                      <div class="mb-4">
+                        <i class="bi bi-graph-up-arrow text-info" style="font-size: 4rem;"></i>
+                      </div>
+                      <h3 class="card-title text-primary mb-3">Eficiência</h3>
+                      <p class="card-text lead">Priorizamos soluções que otimizem tempo, custos e recursos dos nossos clientes, maximizando resultados com menor desperdício.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Transparência -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5">
+                      <div class="mb-4">
+                        <i class="bi bi-eye-fill text-primary" style="font-size: 4rem;"></i>
+                      </div>
+                      <h3 class="card-title text-primary mb-3">Transparência</h3>
+                      <p class="card-text lead">Mantemos relações éticas e de confiança com parceiros e usuários, baseadas na honestidade e clareza em todas as nossas ações.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Foco no Cliente -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="card h-100 shadow-lg border-0">
+                    <div class="card-body text-center p-5">
+                      <div class="mb-4">
+                        <i class="bi bi-people-fill text-danger" style="font-size: 4rem;"></i>
+                      </div>
+                      <h3 class="card-title text-primary mb-3">Foco no Cliente</h3>
+                      <p class="card-text lead">Criamos soluções personalizadas para atender às reais necessidades do mercado, colocando o cliente no centro de tudo que fazemos.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles de navegação -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#valoresCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#valoresCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
       </div>
     </section>
   </main>
