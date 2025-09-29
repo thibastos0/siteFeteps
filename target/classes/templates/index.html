@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
-  <title>Site Feteps</title>
+  <title>LogChain 4.0 - Cadeia Fria Inteligente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap via WebJars -->
@@ -19,8 +19,26 @@
     }
     
     /* Altura mínima para hero section */
-    .min-vh-75 {
-      min-height: 75vh;
+    .min-vh-90 {
+      min-height: 90vh;
+    }
+    
+    /* Hero Section com gradiente */
+    .hero-with-animation {
+      position: relative;
+      background: linear-gradient(135deg, #0f1724 0%, #061023 50%, #667eea 100%);
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      background: rgba(15, 23, 36, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 2rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
     
     /* Carrossel de valores */
@@ -80,13 +98,13 @@
       transform: translateY(-2px);
     }
     
-    /* Ícones animados */
-    .bi {
-      transition: all 0.3s ease;
-    }
-    
-    /* Seções com padding responsivo */
+    /* Responsividade */
     @media (max-width: 768px) {
+      .hero-content {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+      }
+      
       .display-3 {
         font-size: 2.5rem;
       }
@@ -100,14 +118,14 @@
       }
     }
   </style>
-  
-  <!-- Seu CSS customizado (opcional) -->
-  <!-- <link rel="stylesheet" th:href="@{/css/styles.css}"> -->
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">LogChain 4.0</a>
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-thermometer-snow me-2"></i>
+        LogChain 4.0
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -140,19 +158,27 @@
 
   <main class="mt-5 pt-4">
     <!-- Hero Section -->
-    <section id="home" class="p-5 bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+    <section id="home" class="hero-with-animation min-vh-90 d-flex align-items-center">
+      <!-- Conteúdo principal do Hero -->
       <div class="container">
-        <div class="row align-items-center min-vh-75">
-          <div class="col-lg-8 mx-auto text-center">
-            <h1 class="display-3 fw-bold mb-4">
-              <i class="bi bi-thermometer-snow text-info me-3"></i>
-              LogChain 4.0
-            </h1>
-            <h2 class="h3 mb-4 text-light">CADEIA FRIA INTELIGENTE</h2>
-            <p class="lead mb-5">Revolucionando a logística de alimentos com tecnologia IoT de ponta</p>
-            <a href="#sobre" class="btn btn-light btn-lg px-5 py-3 rounded-pill shadow">
-              <i class="bi bi-arrow-down me-2"></i>Conheça Nossa Solução
-            </a>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="hero-content text-center text-white">
+              <h1 class="display-3 fw-bold mb-4">
+                <i class="bi bi-thermometer-snow text-info me-3"></i>
+                LogChain 4.0
+              </h1>
+              <h2 class="h2 mb-4 text-warning">CADEIA FRIA INTELIGENTE</h2>
+              <p class="lead mb-5 text-light">
+                Revolucionando a logística de alimentos com tecnologia IoT de ponta para 
+                monitoramento em tempo real da cadeia de suprimentos refrigerada
+              </p>
+              <div class="d-flex justify-content-center">
+                <a href="#sobre" class="btn btn-warning btn-lg px-5 py-3 rounded-pill shadow">
+                  <i class="bi bi-arrow-down me-2"></i>Conheça Nossa Solução
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -519,7 +545,7 @@
   <script th:src="@{/webjars/jquery/3.7.0/jquery.min.js}"></script>
   <script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 
-  <!-- Script para scroll suave -->
+  <!-- Scripts da animação e navegação -->
   <script>
     // Scroll suave para os links de navegação
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -555,7 +581,8 @@
         }
       });
     });
-  </script>
 
+
+  </script>
 </body>
 </html>
