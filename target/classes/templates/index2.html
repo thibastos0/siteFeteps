@@ -5,104 +5,14 @@
   <title>Site Feteps</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap via WebJars -->
+  <!-- Bootstrap CSS via WebJars -->
   <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}">
   
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Bootstrap Icons via WebJars -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css}">
   
   <!-- Estilos customizados -->
-  <style>
-    /* Scroll suave para toda a página */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Altura mínima para hero section */
-    .min-vh-75 {
-      min-height: 75vh;
-    }
-    
-    /* Carrossel de valores */
-    #valoresCarousel {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .carousel-item {
-      padding: 2rem 0;
-      min-height: 400px;
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 5%;
-      color: #0d6efd;
-    }
-    
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: #0d6efd;
-      border-radius: 50%;
-      padding: 20px;
-    }
-    
-    .carousel-indicators button {
-      background-color: #0d6efd;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-    }
-    
-    /* Animações e transições */
-    .card {
-      transition: all 0.3s ease-in-out;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-    }
-    
-    /* Menu ativo */
-    .nav-link.active {
-      background-color: rgba(255,255,255,0.2) !important;
-      border-radius: 20px;
-    }
-    
-    /* Botões com animação */
-    .btn {
-      transition: all 0.3s ease;
-    }
-    
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-    
-    /* Ícones animados */
-    .bi {
-      transition: all 0.3s ease;
-    }
-    
-    /* Seções com padding responsivo */
-    @media (max-width: 768px) {
-      .display-3 {
-        font-size: 2.5rem;
-      }
-      
-      .display-5 {
-        font-size: 2rem;
-      }
-      
-      .py-5 {
-        padding: 3rem 0 !important;
-      }
-    }
-  </style>
-  
-  <!-- Seu CSS customizado (opcional) -->
-  <!-- <link rel="stylesheet" th:href="@{/css/styles.css}"> -->
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
